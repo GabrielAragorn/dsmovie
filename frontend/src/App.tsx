@@ -1,7 +1,9 @@
+import Navbar from "./assests/components/Navbar";
+
 
 function App() {
   return (
-    <h1>Home Page</h1>
+    <Navbar/>
   );
 }
 
