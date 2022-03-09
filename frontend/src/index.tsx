@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import App from './App';
 
-
+//Here, the application will be renderized
 ReactDOM.render(
   <React.StrictMode>
     <App />

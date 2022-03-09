@@ -1,6 +1,10 @@
+
+
+//importing the github icon
 import {ReactComponent as GithubIcon} from 'assests/img/github_icon.svg'
 import './styles.css'
 
+//Creating my first component :D
 function Navbar(){
   return (
     <header>
