@@ -8,7 +8,7 @@ import { MoviePage } from 'types/movie'
 function Listing() {
   //The first hook :)
   //Hook: useState -> Keep the component state
-  const [pageNumber, setPageNumber] = useState(0)
+  const [pageNumber] = useState(0)
 
   const [page, setPage] = useState<MoviePage>({
     content: [],
