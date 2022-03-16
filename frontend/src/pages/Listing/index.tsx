@@ -8,7 +8,7 @@ import { MoviePage } from 'types/movie'
 function Listing() {
   //The first hook :)
   //Hook: useState -> Keep the component state
-  const [pageNumber] = useState(0)
+  const [pageNumber, setPageNumber] = useState(0)
 
   const [page, setPage] = useState<MoviePage>({
     content: [],
@@ -36,17 +36,24 @@ function Listing() {
     //doing the request from backend
     axios
       //getting the films and sortting then by title (can do with id too)
-      .get(`${BASE_URL}/movies?size=12&page=${pageNumber}&sort=title`)
+      .get(`${BASE_URL}/movies?size=12&page=${pageNumber}&sort=id`)
       .then(response => {
         const data = response.data as MoviePage
         setPage(data)
       })
+    //the use effect is observing the page number, if it changes, like has changed in "handlePageChange" to change the page :)
   }, [pageNumber])
+
+  //the function below set the actual page of movies to another
+  const handlePageChange = (newPageNumber: number) => {
+    setPageNumber(newPageNumber)
+  }
 
   return (
     // that only "<></> guy is called fragment, it does not interfer in nothing :)"
     <>
-      <Pagination />
+      {/* calling pagination, this guy will make the pages change by the arrows */}
+      <Pagination page={page} onChange={handlePageChange} />
 
       <div className="container">
         <div className="row">

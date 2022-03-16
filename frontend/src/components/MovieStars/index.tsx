@@ -48,10 +48,10 @@ function MovieStars({ score }: Props) {
     <div className="dsmovie-stars-container">
       {/* calling the auxiliar component to verify the number and fill the stars with getFills function*/}
       <Star fill={fills[0]} />
-      <Star fill={fills[0]} />
-      <Star fill={fills[0]} />
-      <Star fill={fills[0]} />
-      <Star fill={fills[0]} />
+      <Star fill={fills[1]} />
+      <Star fill={fills[2]} />
+      <Star fill={fills[3]} />
+      <Star fill={fills[4]} />
     </div>
   )
 }
